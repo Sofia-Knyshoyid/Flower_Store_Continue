@@ -9,7 +9,7 @@ import com.example.demo.payment.Payment;
 import java.util.LinkedList;
 
 public class Order {
-    private LinkedList items;
+    private LinkedList<Item> items;
     private Payment payment;
     private Delivery delivery;
 
@@ -23,13 +23,18 @@ public class Order {
         navigate.setDeliveryMethod(delivery);
     }
 
-//    public calculateTotalPrice(){
-//
-//    }
+    public int calculateTotalPrice(){
+        int sum = 0;
+        for (int i = 0; i< items.size(); ++i){
+            sum += items.get(i).getPrice();
+        }
+        return sum;
+    }
 
-//    public processOrder(){
-//        //
-//    }
+    public void processOrder(){
+        setDeliveryStrategy(delivery);
+        setPaymentStrategy(payment);
+    }
 
     void addItem(Item item){
         items.add(item);
@@ -39,3 +44,4 @@ public class Order {
         items.remove(item);
     }
 }
+
