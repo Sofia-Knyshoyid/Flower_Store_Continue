@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping(path="/api/vi/delivery")
 public class DeliveryController {
     @GetMapping
-    public List<? extends Delivery> getPayment() {
+    public List<? extends Delivery> getDelivery() {
         return Arrays.asList(new DHLDeliveryStrategy(), new PostDeliveryStrategy());
     }
 }
