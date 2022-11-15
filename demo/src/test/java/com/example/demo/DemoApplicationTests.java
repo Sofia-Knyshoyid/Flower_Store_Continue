@@ -45,7 +45,7 @@ class DemoApplicationTests {
         RomashkaFlower romashka = new RomashkaFlower();
         items.add(romashka);
 
-        navDel.PayWithChosenMethod(items);
+        navDel.DeliverWithChosenMethod(items);
         for (int i = 0; i < items.size(); ++i) {
             Item itm = (Item) items.get(i);
             navPaym.PayWithChosenMethod(itm.getPrice());
